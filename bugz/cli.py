@@ -613,7 +613,7 @@ class PrettyBugz(Bugz):
 		'severity': make_option('-S', '--severity',
 								choices=config.choices['severity']),
 		'group': make_option('-G', '--group',
-								choices=config.choices['group']),
+								help = 'Restrict bug visibility to a group'),
 	}
 
 
@@ -671,7 +671,7 @@ class PrettyBugz(Bugz):
 		'severity': make_option('-S', '--severity',
 								choices=config.choices['severity']),
 		'group': make_option('-G', '--group',
-								choices=config.choices['group']),
+								help = 'Restrict bug visibility to a group'),
 		'fixed': make_option('--fixed', action='callback',
 								callback = modify_opt_fixed,
 								help = "Mark bug as RESOLVED, FIXED"),

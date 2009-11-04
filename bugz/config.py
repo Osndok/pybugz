@@ -37,6 +37,7 @@ class BugzConfig:
 		'priority': 'P2',
 		'bug_severity': 'normal',
 		'bug_status': 'NEW',
+		'group': '',
 		'assigned_to': '',
 		'keywords': '',
 		'dependson':'',
@@ -111,6 +112,7 @@ class BugzConfig:
 		'cc': '',        # only if there are already cc's
 		'bug_file_loc': '',
 		'bug_severity': '',
+		'group': '',
 		'bug_status': '',
 		'op_sys': '',
 		'priority': '',
