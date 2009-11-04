@@ -612,6 +612,8 @@ class PrettyBugz(Bugz):
 								choices=config.choices['priority'].values()),
 		'severity': make_option('-S', '--severity',
 								choices=config.choices['severity']),
+		'group': make_option('-G', '--group',
+								choices=config.choices['group']),
 	}
 
 
@@ -668,6 +670,8 @@ class PrettyBugz(Bugz):
 								choices=config.choices['priority'].values()),
 		'severity': make_option('-S', '--severity',
 								choices=config.choices['severity']),
+		'group': make_option('-G', '--group',
+								choices=config.choices['group']),
 		'fixed': make_option('--fixed', action='callback',
 								callback = modify_opt_fixed,
 								help = "Mark bug as RESOLVED, FIXED"),
