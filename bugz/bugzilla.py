@@ -455,6 +455,7 @@ class Bugz:
 			status = None, resolution = None,
 			assigned_to = None, duplicate = 0,
 			priority = None, severity = None,
+            group = None,
 			add_cc = [], remove_cc = [],
 			add_dependson = [], remove_dependson = [],
 			add_blocked = [], remove_blocked = [],
@@ -481,6 +482,8 @@ class Bugz:
 		@type    priority: string
 		@keyword severity: new severity for bug
 		@type    severity: string
+		@keyword group: new group for bug
+		@type    group: string
 		@keyword add_cc: list of emails to add to the cc list
 		@type    add_cc: list of strings
 		@keyword remove_cc: list of emails to remove from cc list
@@ -586,6 +589,9 @@ class Bugz:
 		if priority != None:
 			qparams['priority'] = priority
 			modified.append(('priority', priority))
+		if group != None:
+			qparams['group'] = group
+			modified.append(('group', group))
 
 		# cc manipulation
 		if add_cc != None:
