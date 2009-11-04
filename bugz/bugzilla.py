@@ -455,7 +455,7 @@ class Bugz:
 			status = None, resolution = None,
 			assigned_to = None, duplicate = 0,
 			priority = None, severity = None,
-            group = None,
+			group = None,
 			add_cc = [], remove_cc = [],
 			add_dependson = [], remove_dependson = [],
 			add_blocked = [], remove_blocked = [],
@@ -711,8 +711,8 @@ class Bugz:
 		@type: string
 		@keyword severity: severity of this bug
 		@type: string
-        @keyword group: restrict bug to a group
-        @type: string
+		@keyword group: restrict bug to a group
+		@type: string
 
 		@rtype: int
 		@return: the bug number, or 0 if submission failed.
@@ -731,7 +731,10 @@ class Bugz:
 		qparams['dependson'] = dependson
 		qparams['blocked'] = blocked
 		qparams['keywords'] = keywords
-		qparams['group'] = group
+
+		#XXX: by default do not restrict bug to a group
+		if group != '':
+			qparams['group'] = group
 
 		#XXX: default version is 'unspecified'
 		if version != '':

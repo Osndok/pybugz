@@ -396,7 +396,8 @@ class PrettyBugz(Bugz):
 			cc = None, url = None, keywords = None,
 			description_from = None, prodversion = None, append_command = None,
 			dependson = None, blocked = None, batch = False,
-			default_confirm = 'y', priority = None, severity = None):
+			default_confirm = 'y', priority = None, severity = None,
+			group = None):
 		"""Post a new bug"""
 
 		# load description from file if possible
@@ -450,6 +451,13 @@ class PrettyBugz(Bugz):
 				severity = self.get_input(severity_msg)
 			else:
 				self.log('Enter severity (optional): %s' % severity)
+
+			# check for default group
+			if group is None:
+				group_msg ='Enter group (eg. normal) (optional): '
+				group = self.get_input(group_msg)
+			else:
+				self.log('Enter group (optional): %s' % group)
 
 			# check for default assignee
 			if assigned_to is None:
