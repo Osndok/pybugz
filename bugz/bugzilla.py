@@ -522,7 +522,7 @@ class Bugz:
 		FIELDS = ('bug_file_loc', 'bug_severity', 'short_desc', 'bug_status',
 				'status_whiteboard', 'keywords',
 				'op_sys', 'priority', 'version', 'target_milestone',
-				'assigned_to', 'rep_platform', 'product', 'component')
+				'assigned_to', 'rep_platform', 'product', 'component', 'token')
 
 		FIELDS_MULTI = ('blocked', 'dependson')
 
@@ -572,6 +572,9 @@ class Bugz:
 			qparams['knob'] = 'reassign'
 			qparams['assigned_to'] = assigned_to
 			modified.append(('assigned_to', assigned_to))
+
+		# update status
+		qparams['bug_status'] = status
 
 		# setup modification of other bits
 		if comment:
