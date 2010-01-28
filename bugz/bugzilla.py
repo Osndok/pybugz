@@ -574,7 +574,8 @@ class Bugz:
 			modified.append(('assigned_to', assigned_to))
 
 		# update status
-		qparams['bug_status'] = status
+		if status != None:
+			qparams['bug_status'] = status
 
 		# setup modification of other bits
 		if comment:
